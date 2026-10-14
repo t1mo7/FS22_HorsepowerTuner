@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="72">
+    <author>Timo</author>
+    <version>1.0.1.0</version>
+    <title>
+        <en>Horsepower Tuner</en>
+        <de>PS-Tuner</de>
+        <nl>PK-Tuner</nl>
+    </title>
+    <description>
+        <en><![CDATA[Tune the engine of any motorized vehicle in-game.
+
+Press Left Alt + H while driving to open the tuner panel, then:
+- Numpad 8 / Numpad 2: increase / decrease horsepower (top-end power)
+- Numpad 6 / Numpad 4: increase / decrease torque (low-end pull)
+- Numpad 5: reset to stock
+
+Settings are saved per vehicle in your savegame and work in multiplayer.
+All keys can be changed in Options > Controls.]]></en>
+        <nl><![CDATA[Pas het motorvermogen van elk voertuig in het spel aan.
+
+Druk op Linker Alt + H tijdens het rijden om het tuner-paneel te openen:
+- Numpad 8 / Numpad 2: vermogen (pk) omhoog / omlaag
+- Numpad 6 / Numpad 4: koppel omhoog / omlaag
+- Numpad 5: terug naar standaard
+
+Instellingen worden per voertuig opgeslagen en werken in multiplayer.]]></nl>
+    </description>
+    <iconFilename>icon_HorsepowerTuner.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/HorsepowerTunerUtil.lua" />
+        <sourceFile filename="scripts/HorsepowerTunerEvent.lua" />
+        <sourceFile filename="scripts/register.lua" />
+    </extraSourceFiles>
+
+    <specializations>
+        <specialization name="horsepowerTuner" className="HorsepowerTuner" filename="scripts/HorsepowerTuner.lua" />
+    </specializations>
+
+    <actions>
+        <action name="HPTUNE_TOGGLE" category="VEHICLE" />
+        <action name="HPTUNE_HP_UP" category="VEHICLE" />
+        <action name="HPTUNE_HP_DOWN" category="VEHICLE" />
+        <action name="HPTUNE_TQ_UP" category="VEHICLE" />
+        <action name="HPTUNE_TQ_DOWN" category="VEHICLE" />
+        <action name="HPTUNE_RESET" category="VEHICLE" />
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="HPTUNE_TOGGLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_h" />
+        </actionBinding>
+        <actionBinding action="HPTUNE_HP_UP">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" />
+        </actionBinding>
+        <actionBinding action="HPTUNE_HP_DOWN">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_2" />
+        </actionBinding>
+        <actionBinding action="HPTUNE_TQ_UP">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_6" />
+        </actionBinding>
+        <actionBinding action="HPTUNE_TQ_DOWN">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_4" />
+        </actionBinding>
+        <actionBinding action="HPTUNE_RESET">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_5" />
+        </actionBinding>
+    </inputBinding>
+
+    <l10n>
+        <text name="input_HPTUNE_TOGGLE"><en>Engine tuner: open / close</en><de>Motor-Tuner: Ã¶ffnen / schlieÃŸen</de><nl>Motortuner: openen / sluiten</nl></text>
+        <text name="input_HPTUNE_HP_UP"><en>Engine tuner: horsepower +</en><de>Motor-Tuner: PS +</de><nl>Motortuner: pk +</nl></text>
+        <text name="input_HPTUNE_HP_DOWN"><en>Engine tuner: horsepower -</en><de>Motor-Tuner: PS -</de><nl>Motortuner: pk -</nl></text>
+        <text name="input_HPTUNE_TQ_UP"><en>Engine tuner: torque +</en><de>Motor-Tuner: Drehmoment +</de><nl>Motortuner: koppel +</nl></text>
+        <text name="input_HPTUNE_TQ_DOWN"><en>Engine tuner: torque -</en><de>Motor-Tuner: Drehmoment -</de><nl>Motortuner: koppel -</nl></text>
+        <text name="input_HPTUNE_RESET"><en>Engine tuner: reset to stock</en><de>Motor-Tuner: Serienzustand</de><nl>Motortuner: standaard herstellen</nl></text>
+
+        <text name="hptune_title"><en>ENGINE TUNER</en><de>MOTOR-TUNER</de><nl>MOTORTUNER</nl></text>
+        <text name="hptune_horsepower"><en>Horsepower</en><de>Leistung</de><nl>Vermogen</nl></text>
+        <text name="hptune_torque"><en>Torque</en><de>Drehmoment</de><nl>Koppel</nl></text>
+        <text name="hptune_stock"><en>stock</en><de>Serie</de><nl>standaard</nl></text>
+        <text name="hptune_help"><en>Num 8/2: HP   Num 6/4: Torque   Num 5: Reset   Alt+H: Close</en><de>Num 8/2: PS   Num 6/4: Drehmoment   Num 5: Reset   Alt+H: SchlieÃŸen</de><nl>Num 8/2: pk   Num 6/4: Koppel   Num 5: Reset   Alt+H: Sluiten</nl></text>
+    </l10n>
+</modDesc>
